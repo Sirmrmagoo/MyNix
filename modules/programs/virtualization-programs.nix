@@ -1,6 +1,6 @@
 { self, inputs, ... }: {
 
-    flake.nixosConfigurations.virtualiztionPrograms = { config, lib, pkgs, ... }:
+    flake.nixosModules.virtualiztionPrograms = { config, lib, pkgs, ... }:
     {
 
         environment.systemPackages = with pkgs; [

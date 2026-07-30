@@ -1,9 +1,9 @@
 { self, inputs, ... }: {
 
-    flake.nixosConfigurations.programModules = { config, lib, pkgs, ... }:
+    flake.nixosModules.programModules = { config, lib, pkgs, ... }:
     {
         imports = [
-            self.nixosModules.obsStudio
+            self.nixosModules.OBS
             self.nixosModules.virtualiztionPrograms
             self.nixosModules.steam
             self.nixosModules.programing

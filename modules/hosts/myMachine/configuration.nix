@@ -4,7 +4,7 @@
   {
     imports = [
       self.nixosModules.myMachineHardware
-      self.nixosModules.OBS
+      self.nixosModules.programModules
     ];
 
     boot.loader = {

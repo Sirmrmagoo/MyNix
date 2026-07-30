@@ -1,6 +1,6 @@
 { self, inputs, ... }: {
 
-    flake.nixosConfigurations.steam = { config, lib, pkgs, ... }:
+    flake.nixosModules.steam = { config, lib, pkgs, ... }:
 
     {
 
