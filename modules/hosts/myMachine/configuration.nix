@@ -110,22 +110,6 @@
       cava
       picard
       librewolf
-      fish
-      jetbrains.pycharm
-      jetbrains.rider
-      devenv
-      vscode
-      github-desktop
-      git
-      protonup-ng
-      mangohud
-      r2modman
-      ckan
-      chatterino7
-      lutris
-      bottles
-      distrobox
-      boxbuddy
     ];
 
     environment.sessionVariables = {
