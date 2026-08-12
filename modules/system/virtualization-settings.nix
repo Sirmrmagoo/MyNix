@@ -1,20 +1,12 @@
 { self, inputs, ... }: {
 
-    flake.nixosConfigurations.virtualisationSettings = { config, lib, pkgs, ... }:
+    flake.nixosModules.virtualisationSettings = { config, lib, pkgs, ... }: {
+        services.flatpak.enable = true;
 
-{
-
-  services.flatpak.enable = true;
-  virtualisation.virtualbox.host.enable = true;
-
-  virtualisation.podman = {
-    enable = true;
-    dockerCompat = true;
-  };
-
-};
-
-
+        virtualisation = {
+          virtualbox.host.enable = true;
+        };
+    };
 }
 
 

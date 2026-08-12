@@ -1,27 +1,31 @@
-{ self, inputs, ... }: {
+{ self, inputs, ... }:  {
 
-    flake.nixosConfigurations.displaySettings = { config, lib, pkgs, ... }:
+    flake.nixosModules.displaySettings = { config, lib, pkgs, ... }:    {
 
-{
+        services.xserver = {
+            enable = true;
+            videoDrivers = [ "amdgpu" ];
+            xkb = {
+                layout = "us";
+                variant = "";
+            };
+        };
 
-    services.xserver.enable = true;
-    services.xserver.videoDrivers = ["amdgpu"];
-    services.displayManager.sddm.enable = true;
-    services.desktopManager.plasma6.enable = true;
+        services.displayManager.sddm.enable = true;
+        services.desktopManager.plasma6.enable = true;
 
+        hardware.graphics = {
+            enable = true;
+            enable32Bit = true;
+            extraPackages = with pkgs; [
+                mesa.opencl # Enables Rusticl (OpenCL) support
+            ];
+        };
 
-    hardware.graphics = {
-        enable = true;
-        enable32Bit = true;
+        environment.variables = {
+            RUSTICL_ENABLE = "radeonsi";
+        };
     };
-
-    services.xserver.xkb = {
-        layout = "us";
-        variant = "";
-    };
-
-};
-
 }
 
 

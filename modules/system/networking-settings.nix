@@ -1,14 +1,10 @@
-{ self, inputs, ... }: {
+{ self, inputs, ... }:  {
 
-    flake.nixosConfigurations.networkSettings = { config, lib, pkgs, ... }:
+    flake.nixosModules.networkSettings = { config, lib, pkgs, ... }:    {
+        networking.hostName = "sirmr-nixos";
+        networking.networkmanager.enable = true;
 
-{
-
-    networking.hostName = "sirmr-nixos";
-    networking.networkmanager.enable = true;
-
-};
-
+    };
 }
 
 

@@ -8,6 +8,9 @@
         bottles
         distrobox
         boxbuddy
+        wineWow64Packages.stable
+        wineWow64Packages.waylandFull
+        winetricks
         ];
 
     };
