@@ -41,18 +41,6 @@
           "/dev/nvidiactl rw"
           "/dev/dri/renderD128 rw"
         ];
-        
-        Environment = [
-          "LD_LIBRARY_PATH=${lib.makeLibraryPath [
-            pkgs.cuda
-            pkgs.cudatoolkit
-            pkgs.nvidia-utils
-            pkgs.gcc11.cc.lib
-          ]}"
-          "CUDA_HOME=${pkgs.cuda}"
-          "CUDA_PATH=${pkgs.cuda}"
-          "CUDA_DEVICE_ORDER=PCI_BUS_ID"
-        ];
       };
     };
 
