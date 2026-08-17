@@ -44,11 +44,6 @@
       };
     };
 
-    systemd.services.jellyfin.serviceConfig = {
-      PrivateDevices = lib.mkForce false;
-      DevicePolicy = lib.mkForce "auto";
-    };
-
     services.openssh = {
       enable = true;
       openFirewall = true;
