@@ -26,6 +26,7 @@
 
     services.jellyfin = {
       enable = true;
+      database.enable = true;
       openFirewall = true;
       hardwareAcceleration = {
         enable = true;
