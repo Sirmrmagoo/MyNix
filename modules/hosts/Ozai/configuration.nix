@@ -25,7 +25,6 @@
         LD_LIBRARY_PATH = lib.makeLibraryPath [
             pkgs.cudatoolkit
             pkgs.nvidia-docker
-            ffmpeg-cuda
           ];
             CUDA_HOME = "${pkgs.cudatoolkit}";
         };
