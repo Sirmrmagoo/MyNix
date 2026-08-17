@@ -4,6 +4,7 @@
 
         hardware.graphics.enable = true;
         services.xserver.videoDrivers = [ "nvidia" ];
+        boot.kernelModules = [ "nvidia" "nvidia_drm" "nvidia_uvm" ];
         hardware.nvidia-container-toolkit.enable = true;
         
         hardware.nvidia = {
@@ -16,5 +17,11 @@
             intelBusId = "PCI:0@0:2:0";
             nvidiaBusId = "PCI:1@0:0:0";
         };
+
+        environment.systemPackages = with pkgs; [
+            cuda
+            cudatoolkit
+            nvidia-utils
+        ];
     };
 }

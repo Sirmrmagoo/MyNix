@@ -20,16 +20,6 @@
       accelerationDevices = null;
     };
 
-    systemd.services.immich = {
-      environment = {
-        LD_LIBRARY_PATH = lib.makeLibraryPath [
-            pkgs.cudatoolkit
-            pkgs.nvidia-docker
-          ];
-            CUDA_HOME = "${pkgs.cudatoolkit}";
-        };
-    };
-
     services.jellyfin = {
       enable = true;
       openFirewall = true;
