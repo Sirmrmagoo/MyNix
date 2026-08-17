@@ -16,6 +16,7 @@
       port = 2283;
       host = "0.0.0.0";
       openFirewall = true;
+      database.enable = true;
       mediaLocation = "/mnt/NAS/Immich/immichLibrary";
       accelerationDevices = null;
     };
@@ -26,7 +27,6 @@
 
     services.jellyfin = {
       enable = true;
-      database.enable = true;
       openFirewall = true;
       hardwareAcceleration = {
         enable = true;
