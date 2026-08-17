@@ -30,12 +30,36 @@
       };
     };
 
+    systemd.services.jellyfin = {
+      serviceConfig = {
+        PrivateDevices = lib.mkForce false;
+        DevicePolicy = lib.mkForce "auto";
+        DeviceAllow = lib.mkForce [
+          "/dev/nvidia-uvm rw"
+          "/dev/nvidia-uvm-tools rw"
+          "/dev/nvidia0 rw"
+          "/dev/nvidiactl rw"
+          "/dev/dri/renderD128 rw"
+        ];
+        
+        Environment = [
+          "LD_LIBRARY_PATH=${lib.makeLibraryPath [
+            pkgs.cuda
+            pkgs.cudatoolkit
+            pkgs.nvidia-utils
+            pkgs.gcc11.cc.lib
+          ]}"
+          "CUDA_HOME=${pkgs.cuda}"
+          "CUDA_PATH=${pkgs.cuda}"
+          "CUDA_DEVICE_ORDER=PCI_BUS_ID"
+        ];
+      };
+    };
+
     systemd.services.jellyfin.serviceConfig = {
       PrivateDevices = lib.mkForce false;
       DevicePolicy = lib.mkForce "auto";
     };
-
-
 
     services.openssh = {
       enable = true;
