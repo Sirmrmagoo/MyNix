@@ -20,6 +20,17 @@
       accelerationDevices = null;
     };
 
+    systemd.services.immich = {
+      environment = {
+        LD_LIBRARY_PATH = lib.makeLibraryPath [
+            pkgs.cudatoolkit
+            pkgs.nvidia-docker
+            ffmpeg-cuda
+          ];
+            CUDA_HOME = "${pkgs.cudatoolkit}";
+        };
+    };
+
     services.jellyfin = {
       enable = true;
       openFirewall = true;
@@ -29,6 +40,13 @@
         device = "/dev/dri/by-path/pci-0000:01:00.0-render";
       };
     };
+
+    systemd.services.jellyfin.serviceConfig = {
+      PrivateDevices = lib.mkForce false;
+      DevicePolicy = lib.mkForce "auto";
+    };
+
+
 
     services.openssh = {
       enable = true;
@@ -44,6 +62,8 @@
       lshw
       immich-go
       nvitop
+      nvidia-docker
+      ffmpeg
       git
     ];
 
