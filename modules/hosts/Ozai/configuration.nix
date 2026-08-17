@@ -18,7 +18,7 @@
       openFirewall = true;
       database.enable = true;
       mediaLocation = "/mnt/NAS/Immich/immichLibrary";
-      accelerationDevices = "/dev/dri/by-path/pci-0000:01:00.0-render";
+      accelerationDevices = [ "/dev/dri/by-path/pci-0000:01:00.0-render" ];
     };
 
     services.immich.machine-learning.environment = {
