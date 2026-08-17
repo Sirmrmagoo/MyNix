@@ -19,9 +19,13 @@
         };
 
         environment.systemPackages = with pkgs; [
-            cuda
             cudatoolkit
-            nvidia-utils
+            nvidia-container-toolkit
+            nvidia-modprobe
+            nvitop
+            nvidia-docker
+            ffmpeg
+            lshw
         ];
     };
 }

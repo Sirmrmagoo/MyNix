@@ -48,11 +48,7 @@
     };
 
     environment.systemPackages = with pkgs; [
-      lshw
       immich-go
-      nvitop
-      nvidia-docker
-      ffmpeg
       git
     ];
 
