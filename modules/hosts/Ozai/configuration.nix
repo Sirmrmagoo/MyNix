@@ -20,6 +20,10 @@
       accelerationDevices = null;
     };
 
+    services.immich.machine-learning.environment = {
+      HF_XET_CACHE = "/var/cache/immich/huggingface-xet";
+    };
+
     services.jellyfin = {
       enable = true;
       openFirewall = true;
@@ -27,20 +31,6 @@
         enable = true;
         type = "nvenc";
         device = "/dev/dri/by-path/pci-0000:01:00.0-render";
-      };
-    };
-
-    systemd.services.jellyfin = {
-      serviceConfig = {
-        PrivateDevices = lib.mkForce false;
-        DevicePolicy = lib.mkForce "auto";
-        DeviceAllow = lib.mkForce [
-          "/dev/nvidia-uvm rw"
-          "/dev/nvidia-uvm-tools rw"
-          "/dev/nvidia0 rw"
-          "/dev/nvidiactl rw"
-          "/dev/dri/renderD128 rw"
-        ];
       };
     };
 
@@ -67,6 +57,8 @@
     };
 
     users.users."immich" = {
+      home = "/var/lib/immich";
+      createHome = true;
       extraGroups = [ "wheel" "video" "render" ];
     };
     users.groups.immichUser = {};

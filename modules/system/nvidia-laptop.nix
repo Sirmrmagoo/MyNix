@@ -27,5 +27,35 @@
             ffmpeg
             lshw
         ];
+
+
+        systemd.services.jellyfin = {
+            serviceConfig = {
+            PrivateDevices = lib.mkForce false;
+            DevicePolicy = lib.mkForce "auto";
+                DeviceAllow = lib.mkForce [
+                "/dev/nvidia-uvm rw"
+                "/dev/nvidia-uvm-tools rw"
+                "/dev/nvidia0 rw"
+                "/dev/nvidiactl rw"
+                "/dev/dri/renderD128 rw"
+                ];
+            };
+        };
+
+        systemd.services.immich = {
+            serviceConfig = {
+            PrivateDevices = lib.mkForce false;
+            DevicePolicy = lib.mkForce "auto";
+                DeviceAllow = lib.mkForce [
+                "/dev/nvidia-uvm rw"
+                "/dev/nvidia-uvm-tools rw"
+                "/dev/nvidia0 rw"
+                "/dev/nvidiactl rw"
+                "/dev/dri/renderD128 rw"
+                ];
+            };
+        };
+
     };
 }
