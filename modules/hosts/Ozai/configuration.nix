@@ -17,7 +17,7 @@
       host = "0.0.0.0";
       openFirewall = true;
       mediaLocation = "/mnt/NAS/Immich/immichLibrary";
-      services.immich.accelerationDevices = null;
+      accelerationDevices = null;
     };
 
     services.jellyfin = {
