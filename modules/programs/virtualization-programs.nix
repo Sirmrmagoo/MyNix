@@ -5,7 +5,6 @@
 
         environment.systemPackages = with pkgs; [
         lutris
-        bottles
         distrobox
         boxbuddy
         wineWow64Packages.stable

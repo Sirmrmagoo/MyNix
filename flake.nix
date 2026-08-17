@@ -15,14 +15,10 @@
 
     areofyl-fetch.url = "github:areofyl/fetch";
 
-    hyprland.url = "github:hyprwm/Hyprland";
-
-    stylix.url = "github:nix-community/stylix/release-26.05";
-
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake
     { inherit inputs; }
-  (inputs.import-tree ./modules);
+    (inputs.import-tree ./modules);
 
 }
