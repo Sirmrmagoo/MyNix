@@ -1,10 +1,8 @@
-{ self, inputs, ... }: {
-
-    flake.nixosModules.ModuleName = { config, pkgs, lib, ... }:
-    {
+{ self, inputs, ... }:  {
+  flake.nixosModules.ModuleName = { config, pkgs, lib, ... }:  {
 
 
 
 
-    };
+  };
 }
