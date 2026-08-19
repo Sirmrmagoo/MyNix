@@ -2,14 +2,14 @@
 
   flake.nixosModules.OzaiConfiguration = { config, pkgs, lib,  ... }:  {
 
-    imports =
-      [
-        self.nixosModules.OzaiHardware
-        self.nixosModules.timeSettings
-        self.nixosModules.bootloaderSettings
-        self.nixosModules.ozaiNetworking
-        self.nixosModules.NvidiaLaptop
-      ];
+    imports = [
+      self.nixosModules.OzaiHardware
+      self.nixosModules.timeSettings
+      self.nixosModules.bootloaderSettings
+      self.nixosModules.ozaiNetworking
+      self.nixosModules.NvidiaLaptop
+      self.nixosModules.Docker
+    ];
 
     services.immich = {
       enable = true;
@@ -62,7 +62,6 @@
       createHome = true;
       extraGroups = [ "wheel" "video" "render" ];
     };
-    users.groups.immichUser = {};
 
     users.users.jellyfin = {
       extraGroups = [ "wheel" "video" "render" ];

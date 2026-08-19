@@ -9,6 +9,7 @@
         boxbuddy
         wineWow64Packages.stable
         wineWow64Packages.waylandFull
+        wineWow64Packages.staging
         winetricks
         ];
 
