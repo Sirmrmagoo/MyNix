@@ -13,12 +13,13 @@
 
           ports = [ 
             "0.0.0.0:8080:8080" 
-            "0.0.0.0:5657:5657" 
+            "0.0.0.0:5657:5657"
+            "0.0.0.0:25565:25565" 
           ];
 
           volumes = [
-            "/home/nixos/pufferpanel/data:/etc/pufferpanel"
-            "/home/nixos/pufferpanel/servers:/var/lib/pufferpanel:z"
+            "/home/nixos/services/pufferpanel/data:/etc/pufferpanel"
+            "/home/nixos/services/pufferpanel/servers:/var/lib/pufferpanel:z"
             "/var/run/docker.sock:/var/run/docker.sock"
           ];
 
