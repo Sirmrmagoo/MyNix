@@ -8,7 +8,7 @@
       self.nixosModules.bootloaderSettings
       self.nixosModules.ozaiNetworking
       self.nixosModules.NvidiaLaptop
-      self.nixosModules.PufferPanel
+      self.nixosModules.Docker
     ];
 
     services.immich = {
