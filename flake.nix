@@ -15,6 +15,8 @@
 
     areofyl-fetch.url = "github:areofyl/fetch";
 
+    playit-nixos-module.url = "github:pedorich-n/playit-nixos-module";
+
   };
 
   outputs = inputs: inputs.flake-parts.lib.mkFlake

@@ -9,6 +9,12 @@
       ];
     };
 
+
+    services.playit = {
+      enable = true;
+      secretPath = config.age.secrets.playit-secret.path;
+    };
+
     virtualisation.oci-containers = {
 
       backend = "docker";
@@ -35,6 +41,6 @@
         };
       };
     };  
-    
+
   };
 }
