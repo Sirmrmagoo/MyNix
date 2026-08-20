@@ -19,14 +19,10 @@
           volumes = [
             "/home/nixos/pufferpanel/data:/etc/pufferpanel"
             "/home/nixos/pufferpanel/servers:/var/lib/pufferpanel:z"
-            "/home/nixos/pufferpanel/var/run/docker.sock:/var/run/docker.sock"
+            "/var/run/docker.sock:/var/run/docker.sock"
           ];
 
           autoStart = true;
-    
-          extraOptions = [
-            "--restart=on-failure"
-          ];
 
         };
       };
