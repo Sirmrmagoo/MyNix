@@ -46,6 +46,8 @@
       mission-center
       openssl
       protonplus
+      modrinth-app
+      openjdk21
       inputs.dvr-patched.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.areofyl-fetch.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];

@@ -54,7 +54,7 @@
     users.users."nixos" = {
       isNormalUser = true;
       description = "nixos";
-      extraGroups = [ "networkmanager" "wheel" "video" "render" ];
+      extraGroups = [ "networkmanager" "wheel" "video" "render" "docker" ];
     };
 
     users.users."immich" = {
