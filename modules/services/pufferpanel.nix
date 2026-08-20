@@ -1,5 +1,13 @@
 { self, inputs, ... }: {
   flake.nixosModules.PufferPanel = { config, pkgs, lib, ... }: {
+  
+    networking.firewall = {
+      enable = true;
+      allowedTCPPorts = [ 80 443 22283];
+      allowedUDPPortRanges = [
+        { from = 22283; to = 22283; }
+      ];
+    };
 
     virtualisation.oci-containers = {
 
@@ -27,5 +35,6 @@
         };
       };
     };  
+    
   };
 }
