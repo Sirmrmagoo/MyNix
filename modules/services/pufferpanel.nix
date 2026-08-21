@@ -4,15 +4,7 @@
     networking.firewall = {
       enable = true;
       allowedTCPPorts = [ 80 443 22283];
-      allowedUDPPortRanges = [
-        { from = 22283; to = 22283; }
-      ];
-    };
-
-
-    services.playit = {
-      enable = true;
-      secretPath = config.age.secrets.playit-secret.path;
+      allowedUDPPorts = [ 22284 ];
     };
 
     virtualisation.oci-containers = {
