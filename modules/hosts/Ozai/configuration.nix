@@ -9,21 +9,8 @@
       self.nixosModules.ozaiNetworking
       self.nixosModules.NvidiaLaptop
       self.nixosModules.PufferPanel
+      self.nixosModules.Immich
     ];
-
-    services.immich = {
-      enable = true;
-      port = 2283;
-      host = "0.0.0.0";
-      openFirewall = true;
-      database.enable = true;
-      mediaLocation = "/mnt/NAS/Immich/immichLibrary";
-      accelerationDevices = [ "/dev/dri/by-path/pci-0000:01:00.0-render" ];
-    };
-
-    services.immich.machine-learning.environment = {
-      HF_XET_CACHE = "/var/cache/immich/huggingface-xet";
-    };
 
     services.jellyfin = {
       enable = true;
@@ -55,12 +42,6 @@
       isNormalUser = true;
       description = "nixos";
       extraGroups = [ "networkmanager" "wheel" "video" "render" "docker" ];
-    };
-
-    users.users."immich" = {
-      home = "/var/lib/immich";
-      createHome = true;
-      extraGroups = [ "wheel" "video" "render" ];
     };
 
     users.users.jellyfin = {

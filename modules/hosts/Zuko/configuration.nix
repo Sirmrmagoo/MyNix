@@ -11,7 +11,7 @@
     users.users."sirmr" = {
       isNormalUser = true;
       description = "sirmr";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = [ "networkmanager" "wheel" "podman" ];
     };
 
     boot.loader.systemd-boot.enable = true;
@@ -46,9 +46,11 @@
       mission-center
       openssl
       protonplus
-      modrinth-app
+      modrinth-app-unwrapped
       openjdk21
       pciutils
+      bottles
+      parsec-bin
       inputs.dvr-patched.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.areofyl-fetch.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
@@ -56,6 +58,12 @@
     fileSystems."/mnt/NAS" = {
       device = "192.168.68.66:/mnt/JoNAS/Apps";
       fsType = "nfs";
+    };
+
+    virtualisation.podman = {
+      enable = true;
+      dockerCompat = true; # Creates a symlink from docker to podman
+      defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
     };
 
     boot.kernelModules = [ "sg" ];    
