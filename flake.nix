@@ -15,7 +15,12 @@
 
     areofyl-fetch.url = "github:areofyl/fetch";
 
-    playit-nixos-module.url = "github:pedorich-n/playit-nixos-module";
+    hyprmod = {
+      url = "github:BlueManCZ/hyprmod";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
+    hyprland.url = "github:hyprwm/Hyprland";
 
   };
 

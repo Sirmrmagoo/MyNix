@@ -46,11 +46,12 @@
       mission-center
       openssl
       protonplus
-      modrinth-app-unwrapped
+      modrinth-app
       openjdk21
       pciutils
       bottles
       parsec-bin
+      kitty
       inputs.dvr-patched.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.areofyl-fetch.packages.${pkgs.stdenv.hostPlatform.system}.default
     ];
