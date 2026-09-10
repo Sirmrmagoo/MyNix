@@ -7,6 +7,7 @@
             self.nixosModules.garbageSettings
             self.nixosModules.networkSettings
             self.nixosModules.timeSettings
+            self.nixosModules.userSettings
             self.nixosModules.virtualisationSettings
         ];
     };

@@ -4,13 +4,8 @@
     {
 
         environment.systemPackages = with pkgs; [
-        lutris
-        distrobox
-        boxbuddy
-        wineWow64Packages.stable
-        wineWow64Packages.waylandFull
-        wineWow64Packages.staging
-        winetricks
+            lutris
+            winetricks
         ];
 
     };

@@ -28,7 +28,6 @@
       blender
       discord
       btop
-      vlc
       inochi-creator
       easyeffects
       heroic
@@ -52,22 +51,27 @@
       bottles
       parsec-bin
       kitty
+      p7zip
+      vlc
       inputs.dvr-patched.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.areofyl-fetch.packages.${pkgs.stdenv.hostPlatform.system}.default
+      kdePackages.wacomtablet
+      config.boot.kernelPackages.digimend
     ];
+
+    services.hardware.openrgb.enable = true;
+
+    hardware.opentabletdriver.enable = true;
+    services.xserver.digimend.enable = true;
+    hardware.uinput.enable = true;
+
 
     fileSystems."/mnt/NAS" = {
       device = "192.168.68.66:/mnt/JoNAS/Apps";
       fsType = "nfs";
     };
 
-    virtualisation.podman = {
-      enable = true;
-      dockerCompat = true; # Creates a symlink from docker to podman
-      defaultNetwork.settings.dns_enabled = true; # Required for containers under podman-compose to be able to talk to each other.
-    };
-
-    boot.kernelModules = [ "sg" ];    
+    boot.kernelModules = [ "sg" "uinput" ];    
 
     system.stateVersion = "26.05";
   };
