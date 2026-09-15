@@ -57,5 +57,19 @@
             };
         };
 
+         systemd.services.ollama = {
+            serviceConfig = {
+            PrivateDevices = lib.mkForce false;
+            DevicePolicy = lib.mkForce "auto";
+                DeviceAllow = lib.mkForce [
+                "/dev/nvidia-uvm rw"
+                "/dev/nvidia-uvm-tools rw"
+                "/dev/nvidia0 rw"
+                "/dev/nvidiactl rw"
+                "/dev/dri/renderD128 rw"
+                ];
+            };
+        };
+
     };
 }
