@@ -1,15 +1,20 @@
 { self, inputs, ... }: {
 
-    flake.nixosModules.programing = { config, lib, pkgs, ... }:
+  flake.nixosModules.programing =
     {
-        environment.systemPackages = with pkgs; [
-            jetbrains.pycharm
-            jetbrains.rider
-            devenv
-            vscode
-            github-desktop
-            git
-        ];
+      config,
+      lib,
+      pkgs,
+      ...
+    }:
+    {
+      environment.systemPackages = with pkgs; [
+        jetbrains.pycharm
+        jetbrains.rider
+        devenv
+        vscodium
+        nixfmt
+        git
+      ];
     };
 }
-

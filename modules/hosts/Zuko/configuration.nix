@@ -6,6 +6,7 @@
       self.nixosModules.ZukoHardware
       self.nixosModules.programModules
       self.nixosModules.systemModules
+      self.nixosModules.ARM
     ];
 
     users.users."sirmr" = {
@@ -22,7 +23,6 @@
 
     environment.systemPackages = with pkgs; [
       kdePackages.qtsvg
-      fastfetch
       spotify
       audacity
       blender
@@ -37,7 +37,6 @@
       gimp
       chatterino7
       qdirstat
-      handbrake
       libaacs
       libbluray
       makemkv

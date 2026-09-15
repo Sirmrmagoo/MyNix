@@ -10,6 +10,7 @@
       self.nixosModules.NvidiaLaptop
       self.nixosModules.PufferPanel
       self.nixosModules.Immich
+      self.nixosModules.Ollama
     ];
 
     services.jellyfin = {
