@@ -2,7 +2,7 @@
   flake.nixosModules.Ollama = { config, pkgs, pkgs-unstable, lib, ... }:  
     let
       pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
-    in{
+    in  {
 
     services.open-webui = {
       enable = true;
@@ -13,7 +13,6 @@
     services.ollama = {
       enable = true;
       package = pkgs.ollama-cuda;
-
     };
   };
 }
