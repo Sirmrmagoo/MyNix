@@ -5,7 +5,7 @@
 
     services.open-webui = {
       enable = true;
-      port = 0114;
+      port = 8080;
     };
 
     services.ollama = {
