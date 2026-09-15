@@ -13,6 +13,7 @@
       self.nixosModules.Ollama
     ];
 
+
     services.jellyfin = {
       enable = true;
       openFirewall = true;
