@@ -18,7 +18,7 @@
           image = "pufferpanel/pufferpanel:latest";
 
           ports = [ 
-            "0.0.0.0:8080:8080" 
+            "0.0.0.0:8181:8080" 
             "0.0.0.0:5657:5657"
           ];
 
