@@ -1,8 +1,5 @@
 { self, inputs, ... }:  {
-  flake.nixosModules.Ollama = { config, pkgs, pkgs-unstable, lib, ... }:  
-    let
-      pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
-    in  {
+  flake.nixosModules.Ollama = { config, pkgs, pkgs-unstable, lib, ... }:  {
 
     nixpkgs.config.allowUnfree = true;
 
