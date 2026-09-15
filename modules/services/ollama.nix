@@ -1,5 +1,5 @@
 { self, inputs, ... }:  {
-  flake.nixosModules.Ollama = { config, pkgs, pkgs-unstable, lib, ... }:  {
+  flake.nixosModules.Ollama = { config, pkgs, lib, ... }:  {
 
     nixpkgs.config.allowUnfree = true;
 
