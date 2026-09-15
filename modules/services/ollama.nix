@@ -7,7 +7,7 @@
     services.open-webui = {
       enable = true;
       package = pkgs-unstable.open-webui;
-      port = "114";
+      port = "8181";
     };
 
     services.ollama = {
