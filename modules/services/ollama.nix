@@ -1,5 +1,10 @@
 { self, inputs, ... }:  {
-  flake.nixosModules.Ollama = { config, pkgs, lib, ... }:  {
+  flake.nixosModules.Ollama = { config, pkgs, pkgs-unstable, lib, ... }:  
+  
+    let
+      pkgs-unstable = inputs.nixpkgs-unstable.legacyPackages.${pkgs.system};
+    in
+    {
 
     nixpkgs.config.allowUnfree = true;
 
@@ -8,6 +13,7 @@
       openFirewall = true;
       host = "0.0.0.0";
       port = 8282;
+      package = pkgs-unstable.open-webui;
     };
 
     services.ollama = {
