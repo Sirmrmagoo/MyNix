@@ -52,6 +52,11 @@
       kitty
       p7zip
       vlc
+      pwvucontrol
+      wayvr
+      melonloader-installer
+      bs-manager
+      protontricks
       inputs.dvr-patched.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.areofyl-fetch.packages.${pkgs.stdenv.hostPlatform.system}.default
       kdePackages.wacomtablet
@@ -68,6 +73,17 @@
     fileSystems."/mnt/NAS" = {
       device = "192.168.68.66:/mnt/JoNAS/Apps";
       fsType = "nfs";
+    };
+
+    services.monado = {
+      enable = true;
+      highPriority = true;
+      defaultRuntime = true; # Register as default OpenXR runtime
+    };
+
+    systemd.user.services.monado.environment = {
+      STEAMVR_LH_ENABLE = "1";
+      XRT_COMPOSITOR_COMPUTE = "1";
     };
 
     boot.kernelModules = [ "sg" "uinput" ];    

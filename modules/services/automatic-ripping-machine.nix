@@ -3,6 +3,7 @@
 
     environment.systemPackages = with pkgs; [
       lsscsi
+      libdvdcss
     ];
 
     boot.kernelModules = [ "sg" ];
@@ -45,13 +46,13 @@
       containers = {
         arm = {
           autoStart = true;
-          image = "automaticrippingmachine/automatic-ripping-machine:2.22.0";
+          image = "automaticrippingmachine/automatic-ripping-machine:latest";
           volumes = [
-            "/home/sirmr/arm:/home/arm"
-            "/home/sirmr/arm/music:/home/arm/music"
-            "/home/sirmr/arm/logs:/home/arm/logs"
-            "/home/sirmr/arm/media:/home/arm/media"
-            "/home/sirmr/arm/config:/etc/arm/config"
+            "/home/arm:/home/arm"
+            "/home/arm/music:/home/arm/music"
+            "/home/arm/logs:/home/arm/logs"
+            "/home/arm/media:/home/arm/media"
+            "/home/arm/config:/etc/arm/config"
           ];
           ports = [ "8080:8080" ];
           environment = {
