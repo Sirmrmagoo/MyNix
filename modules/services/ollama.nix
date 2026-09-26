@@ -3,7 +3,7 @@
 
     {
 
-    pkgs.config.allowUnfree = true;
+    nixpkgs.config.allowUnfree = true;
 
     services.open-webui = {
       enable = true;
