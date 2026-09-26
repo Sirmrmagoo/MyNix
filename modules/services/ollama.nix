@@ -14,7 +14,6 @@
 
     services.ollama = {
       enable = true;
-      package = pkgs.ollama-cuda;
       loadModels = [ "llama3.2:3b" "codegemma:latest" "yi-coder:latest" "llama2:latest" ];
     };
   };
