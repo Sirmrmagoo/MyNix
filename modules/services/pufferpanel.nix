@@ -4,7 +4,7 @@
     networking.firewall = {
       enable = true;
       allowedTCPPorts = [ 80 443 22283 25572];
-      allowedUDPPorts = [ 22284 ];
+      allowedUDPPorts = [ 22284 19115 49566];
     };
 
     virtualisation.oci-containers = {
