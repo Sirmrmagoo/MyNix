@@ -54,13 +54,24 @@
       vlc
       pwvucontrol
       wayvr
+      wget
+      input-remapper
+      antimicrox
       melonloader-installer
       bs-manager
       protontricks
+      usb-modeswitch
+      sc-controller
+      oversteer
+      unzip
+      rubyPackages.glib2
+      rar
+      godot
       inputs.dvr-patched.packages.${pkgs.stdenv.hostPlatform.system}.default
       inputs.areofyl-fetch.packages.${pkgs.stdenv.hostPlatform.system}.default
       kdePackages.wacomtablet
       config.boot.kernelPackages.digimend
+      linuxKernel.packages.linux_7_1.new-lg4ff
     ];
 
     services.hardware.openrgb.enable = true;
@@ -69,6 +80,7 @@
     services.xserver.digimend.enable = true;
     hardware.uinput.enable = true;
 
+    hardware.new-lg4ff.enable = true;
 
     fileSystems."/mnt/NAS" = {
       device = "192.168.68.66:/mnt/JoNAS/Apps";
@@ -84,6 +96,16 @@
     systemd.user.services.monado.environment = {
       STEAMVR_LH_ENABLE = "1";
       XRT_COMPOSITOR_COMPUTE = "1";
+    };
+
+
+      
+    programs.bash = {
+	    enable = true;
+	    shellAliases = {
+        fetch3d = "fetch --infinite";
+   		  switch = "sudo nixos-rebuild switch";
+      };
     };
 
     boot.kernelModules = [ "sg" "uinput" ];    
