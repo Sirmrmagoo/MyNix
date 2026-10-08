@@ -17,6 +17,8 @@
 
     services.llama-cpp = {
       enable = true;
+      port = 8585;
+      host = "0.0.0.0";
       package = (pkgs.llama-cpp.override { cudaSupport = true; })
 
       modelsPreset = {
