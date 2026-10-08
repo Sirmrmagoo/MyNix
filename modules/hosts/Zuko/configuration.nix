@@ -6,7 +6,7 @@
       self.nixosModules.ZukoHardware
       self.nixosModules.programModules
       self.nixosModules.systemModules
-      self.nixosModules.ARM
+      self.nixosModules.AI
     ];
 
     users.users."sirmr" = {

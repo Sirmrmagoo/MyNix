@@ -19,7 +19,7 @@
       enable = true;
       port = 8585;
       host = "0.0.0.0";
-      package = (pkgs.llama-cpp.override { cudaSupport = true; })
+      package = (pkgs.llama-cpp.override { cudaSupport = true; });
 
       modelsPreset = {
         # Requires 8GB VRAM 
